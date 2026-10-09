@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Gemini Work Helper (local)",
+  "version": "1.1",
+  "description": "Loads queued work into Gemini, sends only when you click, and saves replies to the local workqueue.",
+  "permissions": [],
+  "host_permissions": ["https://gemini.google.com/*", "http://127.0.0.1:8765/*"],
+  "background": { "service_worker": "bg.js" },
+  "content_scripts": [{ "matches": ["https://gemini.google.com/*"], "js": ["content.js"], "run_at": "document_idle" }]
+}
